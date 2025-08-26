@@ -1,0 +1,986 @@
+<!-- Pinetour -->
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Hero Style -->
+    <style>
+      .location-container {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        padding: 65px 0;
+      }
+      /* HERO Destionary Section */
+      .location {
+        width: 275px;
+        height: 370px;
+        background-size: cover;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-shadow: 8px 8px rgba(41, 114, 139, 0.25),
+          -8px -8px rgba(31, 114, 170, 0.46);
+        position: relative;
+      }
+
+      .location-bg {
+        background-color: rgba(41, 41, 41, 0.4);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        border-radius: 40px;
+        opacity: 0;
+        transition: opasity 1s;
+      }
+
+      .location-text {
+        position: relative;
+        z-index: 10;
+        width: 232px;
+        color: rgba(253, 253, 254, 0.8);
+        transition: color 1s;
+        font-size: 37px;
+        font-family: "Bebas Neue";
+        text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.65);
+      }
+
+      .location:hover .location-bg {
+        transition: opacity 1s;
+        opacity: 1;
+      }
+
+      .location:hover .location-text {
+        color: white;
+      }
+
+      /* Hero Menu */
+      .location-en {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* HERO Destination Item */
+      .address-container {
+        position: relative;
+      }
+
+      /* HERO List Day-1,2,3,4,5 */
+
+      .address {
+        width: 513px;
+        height: 112px;
+        box-sizing: border-box;
+        background-color: rgba(238, 233, 217, 1);
+        border-radius: 120px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+        border: 4px solid transparent;
+        margin-left: 120px;
+      }
+
+      .address:hover {
+        border: 4px solid white;
+      }
+
+      .address-city {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-family: montserrat;
+        font-size: 12px;
+        font-weight: 400;
+      }
+
+      .address-city::before {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        background-image: url(1pin.png);
+        background-size: contain;
+      }
+
+      .address-day {
+        width: 52px;
+        height: 52px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .address-image {
+        width: 245px;
+        height: 245px;
+        border-radius: 50%;
+        display: flex;
+        border-radius: 50%;
+        background-image: url(city1.png);
+        background-size: cover;
+        position: absolute;
+        display: none;
+      }
+
+      .address:hover .address-image {
+        display: block;
+      }
+
+      .address-location {
+        font-family: inter;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      /* HERO Packages */
+      .hairtsag1 {
+        width: 384px;
+        height: 527px;
+        border-radius: 40px;
+        background-color: white;
+        padding-left: 24px;
+        margin-top: 50px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .hairtsag1:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.15);
+        outline: 2px solid rgba(14, 165, 233, 0.25);
+        outline-offset: 0;
+        border-radius: 40px;
+      }
+
+      .button {
+        background-color: #a4d1e2;
+        width: 336px;
+        height: 48px;
+        border-radius: 60px;
+        border: none;
+        font-size: 16px;
+        margin-top: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .hairtsag1:hover button {
+        background: black;
+        color: white;
+      }
+    </style>
+    <!-- Hero Style end-->
+  </head>
+
+  <body style="margin: 0">
+    <!--HERO Background Image-->
+    <div
+      style="
+        background-image: url('HeroImage\ \(2\).png');
+        width: 1440px;
+        height: 773px;
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+    >
+      <!--HERO menu -->
+      <div
+        style="
+          width: 1204px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 39px;
+        "
+      >
+        <img src="logo.png" />
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            font-family: 'Inter';
+          "
+        >
+          <a style="color: white">Home</a>
+          <a style="color: white">About</a>
+          <a style="color: white">Contact</a>
+          <img src="user.png" />
+        </div>
+
+        <div class="location-en" style="background-color: white">EN</div>
+      </div>
+
+      <!-- HERO Section -->
+      <div style="text-align: center; padding: 169px 210px 411.5px">
+        <div
+          style="
+            font-size: 80px;
+            background-color: transparent;
+            border: 0;
+            color: #e8edf2b8;
+            margin: 0 auto;
+            text-align: center;
+            font-family: Bebas Neue;
+            font-weight: 400;
+          "
+        >
+          PURE MAGIC
+        </div>
+        <div
+          style="
+            font-size: 250px;
+            border: 2px;
+            color: #fdfdfe;
+            font-family: Bebas Neue;
+            font-weight: 500;
+          "
+        >
+          AWAITS!
+        </div>
+        <div
+          style="
+            font-size: 64px;
+            border: 4px;
+            color: rgba(255, 255, 255, 0.8);
+            font-family: Hanuman;
+            font-weight: 700;
+          "
+        >
+          2024
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO Destination Section -->
+    <div
+      style="
+        background-image: url(div2.png);
+        width: 1440px;
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+      "
+    >
+      <div class="location-container">
+        <div class="location" style="background-image: url(location1.png)">
+          <div class="location-text">Terkhiin tsagaan lake</div>
+          <div class="location-bg"></div>
+        </div>
+        <div class="location" style="background-image: url(Location2.png)">
+          <div class="location-text">Amarbayasgalant monastery</div>
+          <div class="location-bg"></div>
+        </div>
+        <div class="location" style="background-image: url(Location3.png)">
+          <div class="location-text">Khuvgul lake</div>
+          <div class="location-bg"></div>
+        </div>
+        <div class="location" style="background-image: url(location4.png)">
+          <div class="location-text">Khorgiin togoo</div>
+          <div class="location-bg"></div>
+        </div>
+      </div>
+
+      <!-- HERO Destination Item -->
+      <div
+        style="
+          background-image: url(Roadmap.png);
+          width: 1440px;
+          height: 1022px;
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
+        <div style="text-align: center; padding-top: 120px; gap: 10px">
+          <div
+            style="
+              font-size: 42px;
+              font-family: inter;
+              font-weight: 600;
+              background-color: transparent;
+              border: 0;
+              color: black;
+              margin: 0 auto;
+              text-align: center;
+            "
+          >
+            Destination of Our Agency
+          </div>
+          <div
+            style="
+              font-size: 20px;
+              color: rgba(24, 24, 27, 0.7);
+              font-family: inter;
+              font-weight: 500;
+              padding-top: 10px;
+            "
+          >
+            Pack your bags and get ready
+          </div>
+          <div style="margin-top: 72px"></div>
+          <div class="address-container">
+            <!-- HERO List Day-1-->
+            <div class="address">
+              <div class="address-text">
+                <div>
+                  <div class="address-location">Sukhbaatar square</div>
+                  <div class="address-city">Ulaanbator</div>
+                </div>
+              </div>
+              <div class="address-day">DAY 1</div>
+
+              <div
+                class="address-image"
+                style="
+                  top: 125px;
+                  right: 143px;
+                  background-image: url(city1.png);
+                "
+              ></div>
+            </div>
+
+            <!-- HERO Destination Item END-->
+            <!-- HERO List Day-2-->
+            <div
+              class="address"
+              style="background-color: rgba(139, 184, 193, 0.8)"
+            >
+              <div class="address-text">
+                <div class="address-location">Amarbayasgalant monastery</div>
+                <div class="address-city">Bulgan</div>
+              </div>
+              <div class="address-day">DAY 2</div>
+              <div
+                class="address-image"
+                style="
+                  top: 20px;
+                  right: 380px;
+                  background-image: url(city2.png);
+                "
+              ></div>
+            </div>
+
+            <!-- HERO List Day-3-->
+            <div
+              class="address"
+              style="background-color: rgba(170, 216, 215, 0.8)"
+            >
+              <div class="address-text">
+                <div class="address-location">Khorgiin togoo</div>
+                <div class="address-city">Arkhangai</div>
+              </div>
+              <div class="address-day">DAY 3</div>
+              <div
+                class="address-image"
+                style="
+                  top: 200px;
+                  right: 500px;
+                  background-image: url(city3.png);
+                "
+              ></div>
+            </div>
+
+            <!-- HERO List Day-4-->
+            <div
+              class="address"
+              style="background-color: rgba(139, 192, 189, 0.8)"
+            >
+              <div class="address-text">
+                <div class="address-location">Terkhiin tsagaan lake</div>
+                <div class="address-city">Arkhangai</div>
+              </div>
+              <div class="address-day">DAY 4</div>
+              <div
+                class="address-image"
+                style="
+                  top: -10px;
+                  right: 550px;
+                  background-image: url(city4.png);
+                "
+              ></div>
+            </div>
+
+            <!-- HERO List Day-5-->
+            <div
+              class="address"
+              style="background-color: rgba(115, 204, 224, 0.8)"
+            >
+              <div class="address-text">
+                <div class="address-location">Khuvsgul</div>
+                <div class="address-city">Khuvsgul</div>
+              </div>
+              <div class="address-day">DAY 5</div>
+              <div
+                class="address-image"
+                style="
+                  top: -5px;
+                  right: 350px;
+                  background-image: url(city5.png);
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO List Days end -->
+
+      <!-- HERO Packages -->
+      <div
+        style="
+          background-image: url(Price&Footer\ image.png);
+          width: 1440px;
+          height: 1120px;
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
+        <div style="text-align: center; padding-top: 40px; gap: 10px">
+          <div
+            style="
+              font-size: 42px;
+              font-weight: 600;
+              background-color: transparent;
+              border: 0;
+              color: black;
+              margin: 0 auto;
+              text-align: center;
+              font-family: inter;
+            "
+          >
+            Pricing of Our Agency
+          </div>
+          <div
+            style="
+              font-size: 20px;
+              font-family: inter;
+              font-weight: 500;
+              color: rgba(24, 24, 27, 0.7);
+              padding-top: 10px;
+            "
+          >
+            Choose A Package That's Right For you
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 50px">
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              margin-top: 0px;
+              gap: 24px;
+            "
+          >
+            <!-- HERO Packages end -->
+
+            <!-- HERO Budget Package-->
+            <div class="hairtsag1">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  padding-top: 32px;
+                  gap: 16px;
+                "
+              >
+                <div>
+                  <img
+                    style="height: 36px; width: 36px"
+                    src="zurh.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  style="font-size: 18px; font-family: inter; font-weight: 500"
+                >
+                  Budget Package
+                </div>
+              </div>
+              <div style="margin-top: 12px; margin-left: 24px">
+                <div
+                  style="
+                    font-size: 40px;
+                    color: rgba(48, 48, 48, 1);
+                    font-family: montserrat;
+                    font-weight: 600;
+                  "
+                >
+                  500$
+                </div>
+                <div
+                  style="
+                    font-size: 16px;
+                    color: rgba(145, 145, 145, 1);
+                    font-family: inter;
+                    font-weight: 500;
+                    padding-top: 10px;
+                  "
+                >
+                  Essentials Covered
+                </div>
+                <h3
+                  style="
+                    color: #121316;
+                    padding-top: 10px;
+                    padding-left: 55px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 18px;
+                  "
+                >
+                  Includes:
+                </h3>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>Group transportation (shared van/bus)</div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 17.5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>Standard accommodation (yurt or <br />guesthouse)</div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 17.5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>Guided lake tour</div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 17.5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>1 meal per day (breakfast)</div>
+                </div>
+              </div>
+
+              <button class="button">Select package</button>
+            </div>
+          </div>
+          <!-- HERO Budget Package end -->
+
+          <!-- STANDARD PACKAGE -->
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              margin-top: 0px;
+              gap: 24px;
+            "
+          >
+            <div class="hairtsag1">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  padding-top: 32px;
+                  gap: 16px;
+                "
+              >
+                <div>
+                  <img
+                    style="height: 36px; width: 36px"
+                    src="zurh.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  style="font-size: 18px; font-family: inter; font-weight: 500"
+                >
+                  Standard Package
+                </div>
+              </div>
+              <div style="margin-top: 12px; margin-left: 24px">
+                <div
+                  style="
+                    font-size: 40px;
+                    color: rgba(48, 48, 48, 1);
+                    font-family: montserrat;
+                    font-weight: 600;
+                  "
+                >
+                  800$
+                </div>
+                <div style="display: flex">
+                  <div
+                    style="
+                      font-size: 16px;
+                      color: rgba(145, 145, 145, 1);
+                      font-family: inter;
+                      font-weight: 500;
+                      padding-top: 10px;
+                    "
+                  >
+                    Balanced Adventure
+                  </div>
+                  <button
+                    style="
+                      color: white;
+                      background-color: #6972b5;
+                      width: 91px;
+                      height: 27px;
+                      border: none;
+                      font-family: inter;
+                      font-weight: 500;
+                      border-radius: 20px;
+                      margin-left: 90px;
+                      margin-top: 5px;
+                    "
+                  >
+                    Popular
+                  </button>
+                </div>
+                <h3
+                  style="
+                    color: #121316;
+                    padding-top: 10px;
+                    padding-left: 55px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 18px;
+                  "
+                >
+                  Includes:
+                </h3>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>Comportable transportation (mini-bus)</div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 17.5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>
+                    Mid-range accommodation (private yurt or <br />lodge)
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 17.5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>Guided lake tour + nearby hiking</div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 17.5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>2 meals per day (breakfast and dinner)</div>
+                </div>
+              </div>
+
+              <button class="button">Select package</button>
+            </div>
+          </div>
+
+          <!-- LUXURY PACKAGE -->
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              margin-top: 0px;
+              gap: 24px;
+            "
+          >
+            <div class="hairtsag1">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  padding-top: 32px;
+                  gap: 16px;
+                "
+              >
+                <div>
+                  <img
+                    style="height: 36px; width: 36px"
+                    src="zurh.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  style="font-size: 18px; font-family: inter; font-weight: 500"
+                >
+                  Luxury Package
+                </div>
+              </div>
+              <div style="margin-top: 12px; margin-left: 24px">
+                <div
+                  style="
+                    font-size: 40px;
+                    color: rgba(48, 48, 48, 1);
+                    font-family: montserrat;
+                    font-weight: 600;
+                  "
+                >
+                  1200$
+                </div>
+                <div
+                  style="
+                    font-size: 16px;
+                    color: rgba(145, 145, 145, 1);
+                    font-family: inter;
+                    font-weight: 500;
+                    padding-top: 10px;
+                  "
+                >
+                  Ultimate Comport
+                </div>
+                <h3
+                  style="
+                    color: #121316;
+                    padding-top: 10px;
+                    padding-left: 55px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 18px;
+                  "
+                >
+                  Includes:
+                </h3>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>Private transportation (SUV)</div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 17.5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>Luxury accommodation (lakefront lodge)</div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 17.5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>
+                    Guided tours (lake + reindeer herder <br />experience)
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    padding-left: 24px;
+                    padding-top: 17.5px;
+                    font-family: inter;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: #3f4145;
+                  "
+                >
+                  <div><img src="check.png" alt="" /></div>
+                  <div>All meals included (local cuisine)</div>
+                </div>
+              </div>
+
+              <button class="button">Select package</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO Social-medias-->
+        <div style="display: flex">
+          <div
+            style="
+              margin-left: 120px;
+              margin-top: 300px;
+              width: 167px;
+              height: 44px;
+              background-color: #fafbfc;
+              border-radius: 80px;
+            "
+          >
+            <div
+              style="
+                color: #6972b5;
+                font-family: montserrat;
+                font-size: 18px;
+                font-weight: 700;
+                display: flex;
+                justify-content: center;
+                gap: 5px;
+                padding-top: 10px;
+              "
+            >
+              <img src="fbk.svg" />Facebook
+            </div>
+          </div>
+
+          <div
+            style="
+              margin-left: 20px;
+              margin-top: 300px;
+              width: 167px;
+              height: 44px;
+              background-color: #fafbfc;
+              border-radius: 80px;
+            "
+          >
+            <div
+              style="
+                color: #6972b5;
+                font-family: montserrat;
+                font-size: 18px;
+                font-weight: 700;
+                display: flex;
+                justify-content: center;
+                gap: 5px;
+                padding-top: 10px;
+              "
+            >
+              <img src="ig.svg" />Instagram
+            </div>
+          </div>
+          <div style="margin-left: 800px; margin-top: 300px">
+            <img src="Tour.png" />
+          </div>
+        </div>
+
+        <!-- HERO Social-medias end -->
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- Pinetour End -->
